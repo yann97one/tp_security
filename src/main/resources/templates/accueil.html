@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<body>
+<p data-th-text="${#ctx.session.currentUser != null} ? ${#ctx.session.currentUser} : 'Non connecté!'"/>
+<H1>Accueil</H1>
+<a data-th-href="@{/resultatVote}" >Resultat Vote</a>
+<a data-th-href="@{/vote}" >Vo</a>
+<a data-th-href="@{/login}" >Login</a>
+<a data-th-href="@{/logout}" >Logout</a>
+
+<div data-th-each="utilisateur : ${utilisateurs}">
+    <span data-th-text="${utilisateur.nom}"/>
+    <span data-th-text="${utilisateur.roles}"/>
+</div>
+</body>
+</html>
